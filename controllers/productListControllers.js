@@ -9,7 +9,7 @@
 //            2: Create new
 angular.module("sportsStore")
     .constant("productListActiveClass", "btn-primary")
-    .constant("productListPageCount", 5) // Constant that defines number of products
+    .constant("productListPageCount", 3) // Constant that defines number of products
                                          // shown on a page
     .controller("productListCtrl",
     function ($scope, $filter, productListActiveClass, productListPageCount, cart) {
@@ -19,6 +19,7 @@ angular.module("sportsStore")
       var selectedCategory = null;
 
       $scope.selectedPage = 1;
+
       // Define variables on the scope that expose the constant value
       //  Allows access in the view and currently selected page
       $scope.pageSize = productListPageCount;

@@ -15,6 +15,12 @@ available within the HTML>, common alternative is to have it defined in <body>--
          modules and other kinds of components*/
         angular.module("sportsStore", ["customFilters", "cart", "ngRoute"])
                 .config(function ($routeProvider) {
+                    $routeProvider.when("/complete", {
+                        templateUrl: "/views/thankYou.html"
+                    });
+                    $routeProvider.when("/placeorder", {
+                        templateUrl: "/views/placeOrder.html"
+                    });
                     // This calls configuration method on module to set any configuration tasks
 
                     $routeProvider.when("/checkout", {
@@ -38,6 +44,7 @@ available within the HTML>, common alternative is to have it defined in <body>--
     <script src="controllers/productListControllers.js"></script>
     <script src="components/cart/cart.js"></script>
     <script src="ngmodules/angular-route.js"></script>
+    <script src="controllers/checkoutControllers.js"></script>
 </head>
 <!--This sets sportsStoreCtrl to control whole app.
     1                 The controller scope is body-->
@@ -46,7 +53,7 @@ available within the HTML>, common alternative is to have it defined in <body>--
     <a class="navbar-brand" href="#">LV Command Center</a>
     <cart-summary/>
 </div>
-<div class="alert alert-danger" ng-show="data.erros">
+<div class="alert alert-danger" ng-show="data.error">
     Error ({{data.error.status}}). The Launch Vehicle data was not loaded.
     <a href="/app.html" class="alert-link">Click here to try again</a>
 </div>

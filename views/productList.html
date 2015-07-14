@@ -16,6 +16,7 @@
     <div class="well"
          ng-repeat="item in data.products | filter:categoryFilterFn | range:selectedPage:pageSize">
       <!-- item is data binding to {{'item'}}-->
+      <!-- Displays the name -->
       <h3>
         <strong>{{item.name}}</strong>
       <span class="pull-right label label-primary">
