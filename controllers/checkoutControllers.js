@@ -7,12 +7,12 @@
 //  This controller exposes the content of the cart through a scope property called cartData
 //  Defines behavior for calculating total and removing product from cart
 angular.module("sportsStore")
-    .controller("cartSummaryController", function($scope, cart) {
+    .controller("cartSummaryController", function ($scope, cart) {
         $scope.cartData = cart.getProducts();
 
         $scope.total = function () {
             var total = 0;
-            for(var index = 0; index < $scope.cartData.length; index++) {
+            for (var index = 0; index < $scope.cartData.length; index++) {
                 total += ($scope.cartData[index].price * $scope.cartData[index].count);
             }
             return total;
@@ -21,4 +21,4 @@ angular.module("sportsStore")
         $scope.remove = function (id) {
             cart.removeProduct(id);
         };
-    })
+    });
