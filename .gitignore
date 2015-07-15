@@ -105,3 +105,12 @@ crashlytics.properties
 crashlytics-build.properties
 
 node_modules/
+info/
+hooks/
+copyright/
+dictionaries/
+libraries/
+listings/
+server-sportsstore/
+
+
