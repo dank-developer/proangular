@@ -111,6 +111,8 @@ copyright/
 dictionaries/
 libraries/
 listings/
-server-sportsstore/
-lv-command-center/
+server-sportsstore/*
+lv-command-center/*
 
+
+server-sportsstore
