@@ -1,5 +1,6 @@
 angular.module("sportsStoreAdmin")
     .constant("authUrl", "http://localhost:2403/users/login")
+    .constant("ordersUrl", "http://localhost:2403/orders")
     .controller("authCtrl", function ($scope, $http, $location, authUrl) {
 
         $scope.authenticate = function (user, pass) {
@@ -25,5 +26,30 @@ angular.module("sportsStoreAdmin")
 
         $scope.getScreen = function() {
             return $scope.current == "Products" ? "/views/adminProducts.html" : "/views/adminOrders.html";
+        };
+    })
+    .controller("ordersCtrl", function ($scope, $http, ordersUrl) {
+
+        $http.get(ordersUrl, {withCredentials: true})
+            .success(function (data) {
+                $scope.orders = data;
+            })
+            .error(function (error) {
+                $scope.error = error;
+            });
+
+         $scope.selectedOrder;
+
+        $scope.selectedOrder = function(order) {
+            $scope.selectedOrder = order;
+        };
+
+        $scope.calcTotal = function(order) {
+            var total = 0;
+            for(var index = 0; index < order.products.length; index++) {
+                total += order.products[index].count * order.products[index].price;
+
+            }
+            return total;
         };
     });
