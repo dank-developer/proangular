@@ -25,7 +25,7 @@ angular.module("sportsStoreAdmin")
         };
 
         $scope.getScreen = function() {
-            return $scope.current == "Products" ? "/views/adminProducts.html" : "/views/adminOrders.html";
+            return $scope.current == "Products" ? "/views/adminProduct.html" : "/views/adminOrders.html";
         };
     })
     .controller("ordersCtrl", function ($scope, $http, ordersUrl) {
@@ -40,7 +40,7 @@ angular.module("sportsStoreAdmin")
 
          $scope.selectedOrder;
 
-        $scope.selectedOrder = function(order) {
+        $scope.selectOrder = function(order) {
             $scope.selectedOrder = order;
         };
 
