@@ -32,6 +32,8 @@ angular.module("sportsStore")
             });
 
         $scope.sendOrder = function (shippingDetails) {
+            // Copy the data (shipping details) to be safe about not modifying data anywhere else in the
+            //  application
             var order = angular.copy(shippingDetails);
 
             order.products = cart.getProducts();
