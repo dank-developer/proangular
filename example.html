@@ -1,0 +1,33 @@
+<!--Chapter 09 Example-->
+<!DOCTYPE html>
+<html ng-app="exampleApp">
+<head>
+    <title>AngularJS Demo</title>
+    <link href="bootstrap.css" rel="stylesheet"/>
+    <link href="bootstrap-theme.css" rel="stylesheet"/>
+    <script src="angular.js"></script>
+    <script>
+
+/*********************************************************************************
+ * Module method supports 3 arguments
+ * -------------------------------------------------------------------------------
+ *      Name        : Name of module
+ *      Reguires    : set of modules that it depends on
+ *      config      : Configuration for the module, it is == calling module.config
+ *********************************************************************************/
+        var myApp = angular.module("exmapleApp",[]);
+
+        myApp.controller('dayCtr', function ($scope) {
+            // controller statements will go here
+        });
+    </script>
+</head>
+<body>
+<div class="panel" ng-controller="dayCtrl">
+    <div class="page-header">
+        <h3>AngularJS App</h3>
+    </div>
+    <h4>Today is {{ day || "(unknown)"}}</h4>
+</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<div class="panel panel-default row" ng-controller="productListCtrl"
+     ng-hide="data.error">
+    <div class="col-xs-3">
+        <a ng-click="selectCategory()" class="btn btn-block btn-default btn-lg">Home</a>
+        <!-- For each item in products order them by category and filter to only show category-->
+        <a ng-repeat="item in data.products | orderBy: 'category' | unique: 'category'"
+           ng-click="selectCategory(item)" class="btn btn-block btn-default btn-lg"
+           ng-class="getCategoryClass(item)">
+            {{item}}
+        </a>
+    </div>
+    <div class="col-xs-8">
+        <!--Products go here
+        ng-repeat directive goes through item for each item in the data.products array
+        ng-repeat will create multiple divs with for item in products-->
+        <div class="well"
+             ng-repeat="item in data.products | filter:categoryFilterFn | range:selectedPage:pageSize">
+            <!-- item is data binding to {{'item'}}-->
+            <!-- Displays the name -->
+            <h3>
+                <strong>{{item.name}}</strong>
+
+
+            </h3>
+            <button ng-click="addProductToCart(item)"
+                    class="btn btn-success pull-right">
+                Add to B.O.M.
+            </button>
+            <div class="lead">{{ item.description }}</div>
+
+        <div class="lead">
+        {{item.radius}}
+        </div>
+        <div class="lead">
+        {{item.specs}}
+        </div>
+        <div class="lead">
+        {{item.length}}
+        </div>
+        <div class="lead">
+            {{item.height}}
+        </div>
+            <img ng-show="item.category === 'Thermal Environment'" src="Thermal Data.png"/>
+        </div>
+        <div class="pull-right btn-group">
+            <a ng-repeat="page in data.products | filter:categoryFilterFn | pageCount:pageSize"
+               ng-click="selectPage($index + 1)" class="btn btn-default"
+               ng-class="getPageClass($index + 1)">
+                {{$index + 1}}
+            </a>
+        </div>
+    </div>
+</div>
+

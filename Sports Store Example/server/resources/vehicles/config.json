@@ -1,0 +1,85 @@
+{
+	"type": "Collection",
+	"properties": {
+		"name": {
+			"name": "name",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "name",
+			"order": 0
+		},
+		"category": {
+			"name": "category",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "category",
+			"order": 1
+		},
+		"description": {
+			"name": "description",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "description",
+			"order": 2
+		},
+		"specs": {
+			"name": "specs",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "specs",
+			"order": 3
+		},
+		"length": {
+			"name": "length",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "length",
+			"order": 4
+		},
+		"diameter": {
+			"name": "diameter",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "diameter",
+			"order": 5
+		},
+		"mass": {
+			"name": "mass",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "mass",
+			"order": 6
+		},
+		"forwardringdia": {
+			"name": "forwardringdia",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "forwardringdia",
+			"order": 7
+		},
+		"height": {
+			"name": "height",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "height",
+			"order": 8
+		},
+		"radius": {
+			"name": "radius",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "radius",
+			"order": 9
+		}
+	}
+}

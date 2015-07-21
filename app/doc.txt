@@ -1,0 +1,42 @@
+/**
+ * Created by dank on 7/15/15.
+ *
+ * Name convention (ATM):
+ * sportsStore / Ctrl
+ *  -   commandCenter / Ctrl
+ * products
+ *  - vehicles
+ *
+ * description
+ *  - specification
+ *
+ * price
+ *
+ *
+ */
+
+
+ https://europaems.jpl.nasa.gov/share/proxy/alfresco/api/node/content/workspace/SpacesStore/324a1d2b-f377-4ee9-a20d-7dca10b8ae75/fairing%20mate%20mike640x480.m4v
+
+<!-- Displaying videos and images-->
+{#<div>#}
+{#    <div class="atlasVEncap">#}
+{#        <iframe width="560" height="315" src="https://www.youtube.com/embed/uAIETZZc-es?autoplay=1" frameborder="0"#}
+{#                allowfullscreen></iframe>#}
+{#    </div>#}
+{##}
+{##}
+{#    <div class="spaceXFairingSepTest">#}
+{#        <embed width="560" height="315"#}
+{#               src="https://europaems.jpl.nasa.gov/share/proxy/alfresco/api/node/content/workspace/SpacesStore/324a1d2b-f377-4ee9-a20d-7dca10b8ae75/fairing%20mate%20mike640x480.m4v"#}
+{#               frameborder="0"#}
+{#               type="mp4"></embed>#}
+{#    </div>#}
+{##}
+{##}
+{#    <div class="spaceXFairingSepTest">#}
+{#        <iframe width="560" height="315" src="https://www.youtube.com/embed/LtI1V624vWM?autoplay=1" frameborder="0"#}
+{#                allowfullscreen></iframe>#}
+{#    </div>#}
+{##}
+{#</div>#}

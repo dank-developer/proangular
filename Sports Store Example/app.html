@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--ng-app directive makes the functionality defined with the sportsStore module
+available within the HTML>, common alternative is to have it defined in <body>-->
+<html ng-app="sportsStore">
+<head lang="en">
+    <title>CommandCenter</title>
+    <script src="angular.js"></script>
+    <link href="bootstrap.css" rel="stylesheet"/>
+    <link href="bootstrap-theme.css" rel="stylesheet"/>
+    <!--modules are the top-level building blocks in
+        This method creates a new module call sportStore-->
+    <script>
+        /* placing customFilters in [] declares dependencies
+         Dependency Injection - Process of declaring and managing dependencies between
+         modules and other kinds of components*/
+        angular.module("sportsStore", ["customFilters", "cart", "ngRoute"])
+                .config(function ($routeProvider) {
+                    $routeProvider.when("/complete", {
+                        templateUrl: "/views/thankYou.html"
+                    });
+                    $routeProvider.when("/placeorder", {
+                        templateUrl: "/views/placeOrder.html"
+                    });
+                    // This calls configuration method on module to set any configuration tasks
+
+                    $routeProvider.when("/checkout", {
+                        templateUrl: "/views/checkoutSummary.html"
+                    });
+                    $routeProvider.when("/products", {
+                        templateUrl: "/views/productList.html"
+                    });
+                    $routeProvider.otherwise({
+                        templateUrl: "/views/productList.html"
+                    });
+                });
+
+    </script>
+    <!--Source Includes
+        - Angular loads all modules before using them to resolve dependencies
+        - Imports sportsStore Controller, this defines it
+        - Needs to happen before it extends the module-->
+    <script src="controllers/sportsStore.js"></script>
+
+    <script src="filters/customFilters.js"></script>
+
+    <script src="controllers/productListControllers.js"></script>
+
+    <script src="components/cart/cart.js"></script>
+
+    <script src="ngmodules/angular-route.js"></script>
+
+    <script src="controllers/checkoutControllers.js"></script>
+</head>
+<!--This sets sportsStoreCtrl to control whole app.
+    1                 The controller scope is body-->
+<body ng-controller="sportsStoreCtrl">
+<div class="navbar navbar-inverse">
+    <a class="navbar-brand" href="#">LAUNCH SYSTEMS ENGINEERING</a>
+    <cart-summary/>
+</div>
+<div class="alert alert-danger" ng-show="data.error">
+    Error ({{data.error.status}}). The Launch Vehicle data was not loaded.
+    <a href="/app.html" class="alert-link">Click here to try again</a>
+</div>
+<!--This creates an include to a partial view. Allows use to separate portions of the app-->
+<ng-view/>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="commandCenter">
+<head>
+
+    <title>Command Center</title>
+
+    <script src="angular.js"></script>
+    <link href="bootstrap.css" rel="stylesheet"/>
+    <link href="bootstrap-theme.css" rel="stylesheet"/>
+    <!--    TODO: move scripts from app.html -->
+    <script>
+        angular.module("commandCenter", ["customFilters"]);
+    </script>
+    <script src="js/test-js/controllers/commandCenter.js"></script>
+    <script src="js/test-js/filters/customFilters.js"></script>
+    <script src="js/test-js/controllers/vehicleListControllers.js"></script>
+    <script src="js/test-js/controllers/mediaController.js"></script>
+</head>
+<body ng-controller="commandCenterCtrl">
+
+<div class="navbar navbar-inverse">
+    <a class="navbar-brand" href="#">Launch Vehicle Engineering</a>
+</div>
+<div class="panel panel-default row" ng-controller="vehicleListCtrl">
+    <div class="col-xs-3">
+        <a ng-click="selectCategory()"
+           class="btn btn-block btn-default btn-lg">Home</a>
+        <a ng-repeat="item in data.vehicles | orderBy: 'category' | unique: 'category'"
+           ng-click="selectCategory(item)" class="btn btn-block btn-default btn-lg" ng-class="getCategoryClass(item)">
+            {{ item }}
+        </a>
+    </div>
+    <div class="col-xs-8">
+        <div class="well"
+             ng-repeat="item in data.vehicles | filter:categoryFilterFn | range:selectedPage:pageSize">
+            <h3>
+                <strong>{{ item.name }}</strong>
+
+                <span class="pull-right label label-primary">
+                    {{ item.category }}
+                </span>
+
+            </h3>
+            <span class="lead">{{ item.length }}</span>
+            <span class="lead">{{ item.diameter }}</span>
+            <span class="lead">{{ item.description }}</span>
+
+                <section ng-show="hasVideo(item)" class="spaceXFairingSepTest" ng-controller="videoCtrl">
+                    <embed width="560" height="315"
+                           src="https://europaems.jpl.nasa.gov/share/proxy/alfresco/api/node/content/workspace/SpacesStore/324a1d2b-f377-4ee9-a20d-7dca10b8ae75/fairing%20mate%20mike640x480.m4v"
+                           frameborder="0"
+                           type="mp4"></embed>
+                </section>
+
+
+
+        </div>
+        <div class="pull-right btn-group">
+            <a ng-repeat="page in data.vehicles | filter:categoryFilterFn | pageCount:pageSize"
+               ng-click="selectPage($index + 1)"
+               class="btn btn-default" ng-class="getPageClass($index + 1)">
+                {{ $index + 1 }}
+            </a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

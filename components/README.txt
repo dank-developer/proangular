@@ -1,1 +1,0 @@
-Contains self-contained custom AngularJS components.

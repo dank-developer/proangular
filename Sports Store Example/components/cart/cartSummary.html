@@ -1,0 +1,19 @@
+<!--Partial view
+    redefine some bootstrap CSS for nav bar-->
+<style>
+  .navbar-right {
+    float: right !important;
+    margin-right: 5px;
+  }
+  .navbar-text {
+    margin-right: 10px;
+  }
+</style>
+<div class="navbar-right">
+  <div class="navbar-text">
+    <b>B.O.M. :</b>
+    {{ itemCount()}}
+    item(s)
+  </div>
+  <a href="#/checkout" class="btn btn-default navbar-btn">Checkout</a>
+</div>
