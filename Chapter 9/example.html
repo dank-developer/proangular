@@ -39,9 +39,31 @@ loaded.
 <!-- Chapter 9 Summary -->
 <head>
     <title>AngularJS Demo</title>
-    <link>
+    <link href="../bootstrap.css" rel="stylesheet"/>
+    <link href="../bootstrap-theme.css" rel="stylesheet"/>
+    <script src="../angular.js"></script>
+    <script>
+
+        /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+         * Modules are the top-level components for AngularJS App.
+         * _____________________________________________________________________________
+         *  1 : To associate an AngularJS application with a region of an HTML document
+         *  2 : To act as a gateway to key AngularJS framework features
+         *  3 : To help organize the code and components in an AngularJS Application
+         * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * /
+        var myApp = angular.module("exampleApp", []);
+
+        myApp.controller("dayCtrl", function ($scope) {
+            // Controller states will go here
+        })
+    </script>
 </head>
 <body>
-
+<div class="panel" ng-controller="dayCtrl">
+    <div class="page-header">
+        <h3>AngularJS App</h3>
+    </div>
+    <h4>Today is {{ day || "(unknown)"}}</h4>
+</div>
 </body>
 </html>
