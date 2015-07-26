@@ -114,5 +114,9 @@ listings/
 server-sportsstore/*
 lv-command-center/*
 
+bower_components
+node_modules
+.idea
+.DS*
 
 server-sportsstore
