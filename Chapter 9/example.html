@@ -50,12 +50,16 @@ loaded.
          *  1 : To associate an AngularJS application with a region of an HTML document
          *  2 : To act as a gateway to key AngularJS framework features
          *  3 : To help organize the code and components in an AngularJS Application
-         * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * /
+         * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
         var myApp = angular.module("exampleApp", []);
 
         myApp.controller("dayCtrl", function ($scope) {
-            // Controller states will go here
-        })
+            var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            $scope.day = dayNames [new Date().getDay()];
+        });
+
+
     </script>
 </head>
 <body>

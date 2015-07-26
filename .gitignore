@@ -113,6 +113,10 @@ libraries/
 listings/
 server-sportsstore/*
 lv-command-center/*
-
+node_modules
+bower_components
+.DS_Store
+.idea
+Thermal*
 
 server-sportsstore
