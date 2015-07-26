@@ -104,7 +104,6 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 
-node_modules/
 info/
 hooks/
 copyright/
@@ -113,10 +112,9 @@ libraries/
 listings/
 server-sportsstore/*
 lv-command-center/*
-
 bower_components
 node_modules
 .idea
 .DS*
-
 server-sportsstore
+.DS_Store
